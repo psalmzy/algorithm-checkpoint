@@ -1,0 +1,40 @@
+ALGORITHM sentence
+
+VAR
+  sentence: string;
+  length, wordCount, vowelCount: integer;
+  // initialize variables to hold length, word count, and vowel count
+
+BEGIN
+  length := 0;
+  wordCount := 1; // assume at least one word in sentence
+  vowelCount := 0;
+  
+  write('Enter a sentence that ends with a period: ');
+  readln(sentence);
+  // read input sentence from user
+  
+  for i := 1 to length(sentence) do
+  // loop through each character in the sentence
+  begin
+    if sentence[i] <> ' ' then
+    // if current character is not a space, add to length counter
+      length := length + 1;
+    
+    if sentence[i] = ' ' then
+    // if current character is a space, add to word count
+      wordCount := wordCount + 1;
+    
+    if (sentence[i] = 'a') or (sentence[i] = 'e') or (sentence[i] = 'i') or 
+       (sentence[i] = 'o') or (sentence[i] = 'u') or (sentence[i] = 'A') or 
+       (sentence[i] = 'E') or (sentence[i] = 'I') or (sentence[i] = 'O') or 
+       (sentence[i] = 'U') then
+    // if current character is a vowel, add to vowel count
+      vowelCount := vowelCount + 1;
+  end;
+  
+  writeln('Length of sentence: ', length);
+  writeln('Number of words: ', wordCount);
+  writeln('Number of vowels: ', vowelCount);
+  // output results to console
+end.
